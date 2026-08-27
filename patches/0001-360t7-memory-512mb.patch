@@ -1,0 +1,12 @@
+diff --git a/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-360-t7-base.dtsi b/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-360-t7-base.dtsi
+index 8f74b3e..f3d5c9a 100644
+--- a/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-360-t7-base.dtsi
++++ b/target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-360-t7-base.dtsi
+@@ -17,7 +17,7 @@
+ 
+ 	memory {
+-		reg = <0 0x40000000 0 0x10000000>; /* 256MB */
++		reg = <0 0x40000000 0 0x20000000>; /* 512MB (modified hardware) */
+ 	};
+ 
+ 	leds {

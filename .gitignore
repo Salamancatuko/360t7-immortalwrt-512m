@@ -1,0 +1,9 @@
+# 构建产物 / 大文件不入库
+*.bin
+*.ipk
+*.tar.gz
+*.tgz
+build_dir/
+dl/
+staging_dir/
+tmp/
