@@ -1,7 +1,8 @@
-360T7 (MT7981) ImmortalWrt 定制固件
+# 360T7 (MT7981) ImmortalWrt 定制固件
 
 基于 [hanwckf/immortalwrt-mt798x](https://github.com/hanwckf/immortalwrt-mt798x)（`openwrt-21.02` 分支）为 360 T7 编译的定制 ImmortalWrt 固件。
 
+| 项目 | 值 |
 |---|---|
 | SoC | MediaTek MT7981 (Filogic 820, Cortex-A53 双核) |
 | 内存 | **512MB**（原厂 256MB 改焊，dts 已修正） |
@@ -12,7 +13,8 @@
 
 ## 固件包含的插件
 
-在官方 `defconfig/mt7981-ax3000.config` 包集合基础上额外加入以下 5 个包：
+在官方 `defconfig/mt7981-ax3000.config` 包集合基础上额外加入以下 3 个包：
+
 - **UA3F**（含 LuCI 管理界面）
 - **luci-app-openclash**（vernesong master 版）
 - **luci-app-harbor-file**（文件管理，含中文语言包）
