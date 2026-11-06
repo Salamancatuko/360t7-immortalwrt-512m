@@ -1,0 +1,8 @@
+#!/bin/sh
+# 360T7 custom image defaults: argon theme + simplified chinese UI
+uci -q batch <<-EOT
+	set luci.main.lang='zh-cn'
+	set luci.main.mediaurlbase='/luci-static/argon'
+	commit luci
+EOT
+exit 0

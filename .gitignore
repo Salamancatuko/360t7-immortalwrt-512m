@@ -1,0 +1,13 @@
+# 构建产物 / 大文件不入库
+*.bin
+*.ipk
+*.tar.gz
+*.tgz
+build_dir/
+dl/
+staging_dir/
+tmp/
+
+# 交叉编译产出的二进制 / 第三方大文件，不入库
+package/ua3f/src/ua3f
+package/luci-app-openclash/
