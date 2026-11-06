@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ua3f
-PKG_VERSION:=3.6.0
+PKG_VERSION:=3.7.0
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=SunBK201 <sunbk201gm@gmail.com>
@@ -16,15 +16,14 @@ define Package/ua3f
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Web Servers/Proxies
-  TITLE:=Advanced HTTP Rewriting Proxy (prebuilt)
+  TITLE:=Advanced HTTP Rewriting Proxy (UA3F, with LuCI)
   URL:=https://github.com/SunBK201/UA3F
-  DEPENDS:=+luci-compat +ipset +iptables +iptables-mod-tproxy +iptables-mod-extra +iptables-mod-ipopt +iptables-mod-nfqueue +iptables-mod-conntrack-extra +kmod-nf-conntrack-netlink
+  DEPENDS:=+luci-compat +libpcre2 +ipset +iptables +iptables-mod-tproxy +iptables-mod-extra 	+iptables-mod-ipopt +iptables-mod-nfqueue +iptables-mod-conntrack-extra +kmod-nf-conntrack-netlink
 endef
 
 define Package/ua3f/description
-  Advanced HTTP Rewriting Proxy. (Prebuilt aarch64 build, binary
-  cross-compiled with Go 1.24, see scripts/stage_a.sh. LuCI files under
-  luasrc/ htdocs/ are copied from SunBK201/UA3F openwrt/ directory.)
+  UA3F (Ultimate Advanced URL Filter) HTTP rewriting proxy. Prebuilt aarch64
+  binary cross-compiled with Go; LuCI pages and zh-cn translation included.
 endef
 
 define Package/ua3f/conffiles
@@ -51,6 +50,8 @@ define Package/ua3f/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci
 	$(CP) ./luasrc/* $(1)/usr/lib/lua/luci/
 	$(CP) ./htdocs/* $(1)/
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
+	$(INSTALL_DATA) ./files/ua3f.zh-cn.lmo $(1)/usr/lib/lua/luci/i18n/ua3f.zh-cn.lmo
 endef
 
 define Package/ua3f/postrm
